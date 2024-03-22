@@ -1,0 +1,150 @@
+\documentclass[a4j,10pt,dvipdfmx]{jarticle}
+\usepackage{url}
+\usepackage[version=3]{mhchem}
+\usepackage{siunitx}
+\usepackage{amssymb}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{pdfpages}
+\begin{document}
+\section{実験の目的}
+\subsection{ガラス電極pH計の原理}
+ガラス電極pH計を用いて塩酸,酢酸の水酸化ナトリウムによる中和滴定におけるpH滴定曲線を作る.これより当量点を求め,pHの酸の強弱によって異なることを理解する.
+\section{原理}
+ガラス電極pH計の原理は,先端のガラス網膜にある.ガラス網膜は内外の溶液のpHの差に応じて網電位を生じる.
+ガラス電極は内部に一定のpHの溶液と電極を有している.ガラス電極pHメーターではガラス電極と比較電極の間の電位差を電子回路で増幅し,pHを目盛ったメーターで直読みするかたちになっている.
+比較電極にはカロメル電極,銀-塩化銀電極が用いられており,電位は一定になっている.２つを試料溶液に浸したとき,ガラス電極の外のH+の濃度を$c_1$,ガラス電極内部のH+の濃度を$c_2$とすると,$c_2$は一定であるため,生じる電位差$E$は(\ref{E})で表すことができる.
+
+\begin{eqnarray}
+  \label{E}
+  E = A' + \frac{RT}{F}\ln\frac{c_2}{c_1} = A - \frac{RT}{F}\ln{c_1}
+\end{eqnarray}
+
+\subsection{pHの計算方法}
+水酸化ナトリウム溶液で酢酸を滴定したときのpHと滴定量$V_B$との関係からpHが計算できる.
+
+$c_A$を酢酸の初濃度,$V_A$を酢酸の初体積,$c_B$をアルカリの濃度,$V_B$をアルカリの滴下量,$K_A$を酢酸の電離定数,$K_h$を塩の加水分解定数,$K_W$を水のイオン積とする.
+
+
+\subsubsection{$V_B$ = 0のときのpH}
+
+
+弱酸の電離平衡を$\ce{HA <=> H+ + A-}$と表す.酢酸の電離度を$\alpha$とすると,
+\newline
+\begin{center}
+\begin{tabular}{ccccc}
+  \ce{HA} & \ce{<=>} & \ce{H+} & + &\ce{A-}\\
+    $c_A(1-\alpha)$ &&$c_A\alpha$&&$c_A\alpha$\\
+\end{tabular}
+\end{center}
+\begin{eqnarray}
+  \label{ka}
+K_A = \frac{[\ce{H+}][\ce{A-}]}{[\ce{HA}]} = \frac{C_A^2\alpha^2}{c_A(1-\alpha)}
+\end{eqnarray}
+酢酸は弱酸であるので
+\begin{eqnarray}
+  \alpha << 1
+\end{eqnarray}
+よって(\ref{ka})は
+\begin{eqnarray}
+  K_A = C_A\alpha^2
+  \alpha= \sqrt{\frac{K_A}{c_A}}
+\end{eqnarray}
+\begin{eqnarray}
+  [\ce{H+}] = C_A\alpha = \sqrt{K_A c_A} \\
+  pH = - \log{[\ce{H+}]} = - \frac{1}{2} \log{K_A} -\frac{1}{2} \log{c_A}
+\end{eqnarray}
+酢酸の場合,$K_A$は$1.75 \times 10^{-5} = 10^{-4.756}$になる.
+
+\subsubsection{当量点前のpH}
+
+弱酸の電離平衡を$\ce{HA <=> H+ + A-}$とすると,
+\begin{eqnarray}
+  K_A = =frac{[\ce{H+}][\ce{A-}]}{[\ce{HA}]}
+\end{eqnarray}
+\begin{eqnarray}
+  [\ce{H+}] = K_A\frac{[\ce{HA}]}{\ce{A-}}\\
+  pH = -\log{[\ce{H+}]} = -\log{K_A}-log(\frac{c_A V_A-c_B V_B}{V_A + V_B}\div\frac{c_B V_B}{V_A + V_B})\\
+  = pK_A - log{\frac{c_A V_A-c_B V_B}{c_B + V_B}}\\
+\end{eqnarray}
+
+\subsubsection{当量点でのpH}
+当量点ではすべての酢酸は中和されているはずなので,酢酸ナトリウムになる.
+$A$を\ce{CH3COO}とすると
+\begin{eqnarray}
+  \ce{A Na -> A- + Na+}
+\end{eqnarray}
+当量点での塩の濃度を$c_s$における加水分解定数を$h$とおくと
+\begin{center}
+\begin{tabular}{ccccccc}
+  \ce{A-} & + & \ce{H2O} & \ce{<=>} &\ce{HA} & + &\ce{OH-}\\
+  $c_A(1-h)$ &&&&$c_sh$&&$c_sh$\\
+\end{tabular}
+\end{center}
+\begin{eqnarray}
+  \label{1}
+  K_h = \frac{[\ce{HA}][\ce{OH-}]}{[ce{A-}]}
+\end{eqnarray}
+\begin{eqnarray}
+  \label{2}
+  K_h = \frac{c_s^2h^2}{c_s(1-h)}= \frac{c_s h^2}{(1-h)}
+\end{eqnarray}
+\begin{eqnarray}
+  \label{3}
+  K_W = [\ce{H+}][\ce{OH-}]= 1 \times 10^{-14}
+\end{eqnarray}
+
+(\ref{1})(\ref{2})(\ref{3})より
+\begin{eqnarray}
+  \label{4}
+  K_h = \frac{[HA]}{[A-]}\frac{K_W}{H+} = \frac{K_W}{K_A}
+\end{eqnarray}
+$h \fallingdotseq 0$ より,(\ref{2})は$K_h=c_sh^2$
+よって
+\begin{eqnarray}
+  \label{5}
+  h= \frac{K_h}{c_s}
+\end{eqnarray}
+
+(\ref{4})(\ref{5})より
+\begin{eqnarray}
+  [\ce{OH-}]= c_sh = \sqrt{K_h c_s}=\sqrt{\frac{K_h c_s}{K_A}}\\
+  pOH = -log[\ce{OH-}] = -\frac{1}{2} \log{K_W} +\frac{1}{2} \log{K_A}-\frac{1}{2} \log{c_s}\\
+  pH = 14-pOH= 7+\frac{1}{2}pK_A+ \frac{1}{2}\log{c_s}\\
+  c_s= \frac{c_A V_A}{V_A+V_B} = \frac{c_B V_B}{V_A+V_B}
+\end{eqnarray}
+
+\section{実験}
+\subsection{pH計の較正}
+\begin{enumerate}
+  \item pHメーターのレンジ切り替えつまみを"pH"にする.
+  \item リン酸標準液の中にガラス電極を球部まで完全に浸し,指針が安定したら,"ZERO ADJ"つまみで調整する
+  \item 電極を引き上げ,からのビーカーを電極の下に置き,洗浄びんから蒸留水をふきつけ十分洗浄し,短冊形のろ紙を軽く当て,水滴を拭き取る.
+  \item フタル酸標準液を用い,"SPAN"つまみで調整する.
+  \item 手順3と同じ操作で洗浄する.
+  \item もう一度2~5の工程を行う.
+\end{enumerate}
+\subsection{塩酸の滴定}
+\begin{enumerate}
+  \item 0.1mol/Lの水酸化ナトリウム溶液でビュレットを共洗いする
+  \item ビュレットに0.1mol/Lの水酸化ナトリウム溶液を十分に入れる
+  \item 0.1mol/Lの塩酸を10.0mLをホールピペットでビーカーに取る.このビーカーに蒸留水90.0mLとメチルオレンジ溶液を数滴加える.
+  \item ビーカーをマグネティックスターラーに置き,ガラス電極と温度計を浸す.
+  \item 滴下する前のpHを記録する.
+  \item スターラーを回転させたまま,水酸化ナトリウム溶液を滴下して,その時のpH値と溶液の色の変化を観察して記録する.
+\end{enumerate}
+\subsection{酢酸の滴定}
+\begin{enumerate}
+  \item ビュレットに再度0.1mol/Lの水酸化ナトリウム溶液を十分に入れる
+  \item 0.1mol/Lの酢酸を10.0mLをホールピペットでビーカーに取る.このビーカーに蒸留水90.0mLとフェノールフタレイン溶液を数滴加える.
+  \item ビーカーをマグネティックスターラーに置き,ガラス電極と温度計を浸す.
+  \item 滴下する前のpHを記録する.
+  \item スターラーを回転させたまま,水酸化ナトリウム溶液を滴下して,その時のpH値と溶液の色の変化を観察して記録する.
+\end{enumerate}
+\subsection{水道水/蒸留水のpH測定}
+\begin{enumerate}
+  \item 十分に蒸留水で洗い2~3分後の値を測定する
+\end{enumerate}
+\section{結果}
+  
+\section{考察}
+\end{document}

@@ -1,0 +1,137 @@
+\documentclass[a4j,10pt,dvipdfmx]{jarticle}
+\usepackage{url}
+\usepackage[version=3]{mhchem}
+\usepackage{siunitx}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{pdfpages}
+\begin{document}
+\section{10分間テスト}
+\section{実験の目的}
+化学反応速度について,反応次数,速度定数,半減期の概念を学ぶ.
+エステルの濃度$\alpha$が指数関数的に減少することを確認し,速度定数および半減期を求める.
+\section{原理}
+物質が分解するときにその分解の速さが他の物質に影響されない場合,単位時間辺りの分解する物質の数はその時に存在している物質の数に比例する.
+物質の濃度を$[A]$,減少の速さを$v$,比例定数を$v$で現すと(\ref{v})となる.
+\begin{eqnarray}
+  \label{v}
+  v = - \frac{d[A]}{dt} = k[A]
+\end{eqnarray}
+酢酸エチルは水溶液中で(\ref{ch3})に従って加水分解して酢酸とエタノールになる.
+\begin{eqnarray}
+  \label{ch3}
+\ce{ CH3COOC2H5 + H2O ->C[{k'} ] CH3COOH + C2H5OH }
+\end{eqnarray}
+この反応は純水中ではほとんど進まないが,水素イオンの触媒効果によってかなり速くなる.
+このときの速度式は(\ref{v2})となる.
+\begin{eqnarray}
+  \label{v2}
+  v = k'[\ce{CH3COOC2H5}][\ce{H2O}]
+\end{eqnarray}
+ここで[\ce{H2O}]を一定と置くと(\ref{v2})は(\ref{v3})となる.
+\begin{eqnarray}
+  \label{v3}
+  v = k[\ce{CH3COOC2H5}]
+\end{eqnarray}
+酢酸エチルの濃度[\ce{CH3COOC2H5}]を$a$と置くと,$a$は時間$t$に対して指数関数
+\begin{eqnarray}
+  \label{a}
+  a = a_0e^{-kt}
+\end{eqnarray}
+に従って減少する.
+(\ref{a})の対数を取ると
+\begin{eqnarray}
+  \label{aln}
+  \ln a = -kt \ln a_0
+\end{eqnarray}
+となる.$\ln a$を縦軸,$t$を横軸に取ってグラフを作ると,その傾きから速度定数$k$を求める事が可能となる.
+
+酢酸エチルの濃度が半分になる半減期を$t_{1/2}$とすると,$a= \frac{1}{2}a_0$のとき$t=t_{1/2}$であるから,この値を(\ref{a})に代入すると
+\begin{eqnarray}
+  \label{t_1/2}
+  t_{1/2} = \frac{(\ln2)}{k}
+\end{eqnarray}
+となる.
+ただし$a$の値を直接測定するのは困難なため,エステルの減少分が生成した酢酸の増加分と等しいことを利用して,酢酸の定義を滴定で求める.
+今回は触媒として塩酸を利用しているので塩酸の濃度を差し引く必要がある.
+酸の濃度は,濃度がわかっている水酸化ナトリウム溶液で滴定して求める.
+時間tにおける濃度は滴定に利用した水酸化ナトリウム溶液の体積$V$から求める.
+$V_\infty$をエステルが完全に分解して生成した酢酸を中和するのに必要な水酸化ナトリウム溶液の体積,$V_t$をある時刻までに分解して生成した酸を中和するのに必要な水酸化ナトリウム溶液の体積,$V_0$を触媒として用いた酸を分解するのに必要な水酸化ナトリウム溶液の体積
+とすると
+$V_\infty$-$V_t$で時刻tに反応中に残存しているエステルが分解したときに生成する酢酸を中和するのに必要な水酸化ナトリウム溶液の体積,
+$V_\infty$-$V_0$で1回目の測定のときの反応液中に存在するエステルが分解したときに生成する酢酸を中和するのに必要な水酸化ナトリウム溶液の体積と求められる.
+
+酢酸エチルの濃度$a$および初期濃度$a_0$は次のように表せる.
+\begin{eqnarray}
+  \label{a11}
+  a = c(V_\infty-V_t)
+\end{eqnarray}
+\begin{eqnarray}
+  \label{a12}
+  a_0 = c(V_\infty-V_0)
+\end{eqnarray}
+cは一定値であるので(\ref{a})に代入すれば
+\begin{eqnarray}
+  \label{ac1}
+  (V_\infty-V_t) = (V_\infty-V_0)e^{-kt}
+\end{eqnarray}
+\begin{eqnarray}
+  \label{ac2}
+  \ln(V_\infty-V_t) = -kt + \ln(V_\infty-V_0)
+\end{eqnarray}
+となる.
+\section{実験}
+まず恒温槽とよばれるものに水を7割程度入れて30度に設定してスイッチを入れた.
+0.5mol/L \ce{HCl}を100mL入れた200mL三角フラスコと酢酸エチルを7ml入れたおもり付き試験管を恒温槽に浸し,恒温槽の水温と等しくした.
+コニカルビーカーに蒸留水を50mL入れたものを3つ用意した.
+ビュレットを水酸化ナトリウム溶液で満たし,一旦流して,もう一度メモリ0のところになるまで入れた.
+おもり付き試験管からホールピペットで酢酸エチル5mLを量り取り,0.5mol/L \ce{HCl}を100mL入れた200mL三角フラスコに入れて混ぜ,そこから5mlホールピペットで量り取り用意したコニカルビーカーに注いで反応を停止させた.
+このとき混合溶液から量り取ったときにホールピペットの半分くらいの場所で時間を記録した.
+反応を停止させたコニカルビーカーにフェノールフタレインを2,3滴注ぎ,その後,ビュレットから水酸化ナトリウム溶液を加えて混ぜて反応を見た.
+かすかにピンク色になった時点で水酸化ナトリウム溶液を注ぐのをやめ,ビュレットの値を記録した.
+これを最初に時間を測り始めてから10分ごとに4回繰り返した.
+同時に混合溶液から7mlほど量り取って別で用意されている65度の恒温槽に入れて最後の測定が終わったあとに同様に滴定した.このときの値を$V_\infty$とした.
+
+\section{結果}
+結果を時間と水酸化ナトリウム溶液の量$V_t/mL$,$V_\infty - V_t$,$\ln(V_\infty - V_t)$を項目として表1にまとめた.
+\begin{table}[h]
+  \label{result}
+  \begin{center}
+    \caption{実験結果}
+    \begin{tabular}{\textwidth}{ccccc}
+      \hline
+      滴定回数 & 時間(t/s) & $V_t/mL$ & $V_\infty - V_t$ & $\ln(V_\infty - V_t)$ \\ \hline
+      1 & 0 & 8.0 & 7.9 & 2.07\\
+      2 & 660 & 8.3 &7.6 & 2.02\\
+      3 & 1227 & 8.6 &7.3 & 1.99\\
+      4 & 1830 & 9.1 &6.8 & 1.91\\
+      5 & 2431 & 10.2 &5.7 & 1.74\\
+      $\infty$ & $\infty$ & 15.9 & & \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
+また横軸をt,縦軸を$\ln(V_\infty - V_t)$でグラフを作成した.グラフは巻末に添付した.
+グラフの直線から読み取りやすい位置を二箇所選び反応速度定数$k$を求める.
+グラフ内で$\triangle$で示している値から計算した.
+\begin{eqnarray}
+  \label{k}
+  k= |\frac{1.90-2.00}{1800-850}|=1.1\times10^{-4}
+\end{eqnarray}
+(\ref{t_1/2})より半減期は
+\begin{eqnarray}
+  \label{than}
+  t_{1/2} = \frac{(\ln2)}{1.1\times10^{-4}}= 6301.34s
+\end{eqnarray}
+となった.
+\section{考察}
+時間の都合により滴定の回数がすくなかったためグラフを書くのが難しく,kの値をどう求めるかが人によって変わってしまいそうに感じた.
+また,実験中に水酸化ナトリウム溶液を入れすぎてしまったと感じる場面が多く,水酸化ナトリウム溶液の量も実際はもう少し少なかったのではないかと考えられる.
+
+
+\begin{thebibliography}{9}
+  \bibitem{a} 電気通信大学『基礎科学実験』2021年,p33$\sim$39
+\end{thebibliography}
+
+\end{document}

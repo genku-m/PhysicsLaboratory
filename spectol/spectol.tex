@@ -1,0 +1,186 @@
+\documentclass[a4j,10pt]{jarticle}
+\usepackage{url}
+\usepackage{graphicx}
+\begin{document}
+  \section{実験の目的}
+  NaランプとHランプを用い,回析格子分光計を使って,特有なスペクトル線を観測し,その波長を求める.
+  \section{実験の原理}
+  \subsection{スペクトル線}
+  量子論によると,水素原子のエネルギーはつぎのようにとびとびの値をとる.
+  \begin{eqnarray}
+    \label{h}
+    E_n = - \frac{hcR}{n^2} (n = 1,2,3,...)
+  \end{eqnarray}
+  $hcR$は定数で,$h$はプランク定数,$c$は真空中の高速度,$R$はリュートベリ定数である.量子数$n$で決まるエネルギーの値をエネルギー準位という.
+  放電により高いエネルギー準位$n_1$に挙げられた原子が,より低いエネルギー準位$n_2$へ遷移するときに光が放出され,その波長$\nu$と波長$\lambda$は次の式から導くことができる.
+  \begin{eqnarray}
+    \label{nu}
+    h\nu = E_{n_1}-E_{n_2} \ および \ \frac{1}{\lambda} = \frac{\nu}{c} = \frac{1}{hc}(E_{n_1} - E_{n_2})
+  \end{eqnarray}
+  水素原子の可視域のスペクトル線は$n>2$の順位から,$n=2$の順位へ遷移するとき
+  \begin{eqnarray}
+    \label{nuu}
+    \frac{1}{\lambda} = \frac{1}{hc}(E_{n_1} - E_{n_2}) = R\left( \frac{1}{2^2} - \frac{1}{n^2} \right) (n=3,4,5,...)
+  \end{eqnarray}
+  (\ref{nuu})から計算できる.
+  \subsection{回析格子の原理}
+  回析格子とはスリットを狭い感覚で並べたものである.特定の波長の光線を回析格子の面に垂直に当てると,いくつかの方向に回析光が現れる.光線から回析格子を通しまっすぐ出てくるものを0次,それより角度が増す方向を順番に1次,2次...の回析光という.
+  0次の回析光と回析光の方向のなす角を回析角という.
+  $m$次回析光の回析角$\theta_m$は
+  \begin{equation}
+    \label{kaisetu}
+    \sin \theta_m = m \lambda N \ \ \ (m=\pm 1 , \pm 2 , ...)
+  \end{equation}
+  の式で求めることができる.
+  (\ref{kaisetu})の$\lambda$は光の波長, $N$は回折格子の単位長さ当たりの格子数でありこれを格子定数と呼ぶ.この式は隣接するスリットを通る光が強め合う条件は,「光路差が波長の整数倍に等しい」であることを表す.
+  これより回析角$\theta$,光の波長$\lambda$,光の次数$m$がわかれば格子定数$N$は
+  \begin{equation}
+    \label{N}
+     N =\frac{\sin \theta_m}{m \lambda} \ \ \ (m=\pm 1 , \pm 2 , ...)
+  \end{equation}
+  回析角$\theta$,光の次数$m$,格子定数$N$がわかれば光の波長$\lambda$は
+  \begin{equation}
+    \label{lamda}
+    \lambda = \frac{\sin \theta_m}{m N} \ \ \ (m=\pm 1 , \pm 2 , ...)
+  \end{equation}
+  と求められる.
+
+  \section{実験の方法}
+  この実験では,角度$1/60^\circ=1'$まで測れる分光器を用いた.
+
+  目からの距離が異なる2つの物体を見るとき,目を動かせば相対的位置はずれて見える.このことを視差という.このすれの分スペクトル線の計測に不確かさが含まれるので,まず視差をなくす調整をした.
+  接眼レンズを覗いたときに見える十字線がはっきり見えるように接眼レンズを調節しピントを合わせた.
+  次にスリットの輪郭がはっきり見えるように接眼レンズの前にあるネジで調節した.
+  これによってスリットの像と十字線が重なり視差がなくなった.
+
+
+  \subsection{Naランプの測定}
+  まずNaランプを発光させて,二本の$D$線が観測できるようにスリットを調整した.
+  $D_1$線,$D_2$線それぞれの一次回折光,二次回折光を観測し,その位置を記録した.右側のときの記録を$\theta_R$,左側のときを$\theta_L$とした.
+  その後,$m$次回折光の回折角$\theta_m$を$\theta_m=\frac{\theta_L-\theta_R}{2}$と求め,(\ref{N})で格子定数$N$を求めた.
+  
+  \subsection{Hランプの測定}
+  まずHランプを発光させた.
+  観測できる色の回折光をそれぞれ1次回折光,二次回折光まで観測し,それぞれ記録した.
+  $m$次回折光に対する回折角$\theta_m$を求めて,Naランプの測定時に求めた$N$を利用し,(\ref{lamda})の式から,それぞれの光の波長$\lambda$を求めた.
+  \section{結果}
+  \subsection{Naランプの測定結果}
+  Naランプによる回析角の測定は次のとおりとなった.
+    \begin{table}[h]
+      \centering
+      \caption{Naランプの測定結果}
+      \begin{tabular}{c c c c c} \hline
+        \raisebox{0.5zh}{記号} & \raisebox{0.5zh}{$\theta_{\rm L}$} & \raisebox{0.5zh}{$\theta_{\rm R}$} & \shortstack{$\theta$ \\ $=(\theta_{\rm L}-\theta_{\rm R})/2$} & \shortstack{$\theta_0$ \\ $=(\theta_{\rm L}+\theta_{\rm R})/2$} \\ \hline
+        D11\ \ D1線1次 & $295^\circ31'$ & $254^\circ9'$ & $20^\circ41'$ & $274^\circ50'$ \\
+        D21\ \ D2線1次 & $295^\circ32'$ & $254^\circ10'$ & $20^\circ41'$ & $274^\circ50'$ \\
+        D12\ \ D1線2次 & $319^\circ55'$ & $229^\circ54'$ & $45^\circ1'$ & $434^\circ25'$ \\
+        D22\ \ D2線2次 & $319^\circ50'$ & $230^\circ$ & $44^\circ55'$ & $274^\circ55'$ \\ \hline    
+        \label{tab:Na}      
+      \end{tabular}
+    \end{table}
+  これより、格子定数$N$とその不確かさ$\Delta N$を求めた.まず回折角の測定結果から${\rm D}_i$線{\it m}次に対する対する格子定数$N_{{\rm D}im}$は,(\ref{N})式を用いて,NaのD1線,D2線の波長はそれぞれ$\lambda_{{\rm D}1}=589.592$ nm,$\lambda_{{\rm D}2}=588.995$ nmとし\cite{a},次のように求めた.
+    \begin{eqnarray*}
+      N_{{\rm D}11} &=& \frac{\sin \theta_{{\rm D}11}}{1\cdot \lambda_{{\rm D}1}} = \frac{\sin (20^\circ41')}{1\cdot589.592\times10^{-6}} = 597.97... \cong 598.0 \,{\rm mm}^{-1} \\
+      N_{{\rm D}21} &=& \frac{\sin \theta_{{\rm D}21}}{1\cdot \lambda_{{\rm D}2}} = \frac{\sin (20^\circ41')}{1\cdot588.995\times10^{-6}} = 599.57.... \cong 599.6 \,{\rm mm}^{-1} \\
+      N_{{\rm D}12} &=& \frac{\sin \theta_{{\rm D}12}}{2\cdot \lambda_{{\rm D}1}} = \frac{\sin (45^\circ1')}{2\cdot589.592\times10^{-6}} = 599.86... \cong 599.9 \,{\rm mm}^{-1} \\
+      N_{{\rm D}22} &=& \frac{\sin \theta_{{\rm D}22}}{2\cdot \lambda_{{\rm D}2}} = \frac{\sin (45^\circ55')}{2\cdot588.995\times10^{-6}} = 609.82... \cong 609.8 \,{\rm mm}^{-1} \\
+    \end{eqnarray*}
+  次に不確かさを考慮した格子定数の平均$\bar{N}$とその不確かさ$\Delta N$を求める.回折角と波長はそれぞれの最小桁に$\pm1$の不確かさが存在するとして$\Delta \theta = 1' = \frac{\pi}{60\cdot180} {\rm rad}$、$\Delta \lambda = 0.001\, {\rm nm}$とした.
+  \begin{eqnarray*}
+    \Delta N_{{\rm D}11} &=& N_{{\rm D}11}　\sqrt{ \left( \frac{\cos \theta_{{\rm D}11}}{\sin \theta_{{\rm D}11}} \cdot \Delta\theta \right) ^2 + \left( \frac{\Delta \lambda}{\lambda_{{\rm D}1}} \right) ^2} \\
+                         &=& 598.0 \sqrt{ \left( \frac{\cos (20^\circ41')}{\sin (20^\circ41')} \cdot \frac{\pi}{60\cdot180} \right) ^2 + \left( \frac{0.001}{589.592} \right) ^2} \\
+                         &=& 0.46... \cong 0.5 \,{\rm mm}^{-1}\\
+    \Delta N_{{\rm D}21} &=& N_{{\rm D}21}　\sqrt{ \left( \frac{\cos \theta_{{\rm D}21}}{\sin \theta_{{\rm D}21}} \cdot \Delta\theta \right) ^2 + \left( \frac{\Delta \lambda}{\lambda_{{\rm D}2}} \right) ^2} \\
+                         &=& 599.6 \sqrt{ \left( \frac{\cos (20^\circ41')}{\sin (20^\circ41')} \cdot \frac{\pi}{60\cdot180} \right) ^2 + \left( \frac{0.001}{588.995} \right) ^2} \\
+                         &=& 0.46... \cong 0.5 \,{\rm mm}^{-1}\\
+    \Delta N_{{\rm D}12} &=& N_{{\rm D}12}　\sqrt{ \left( \frac{\cos \theta_{{\rm D}12}}{\sin \theta_{{\rm D}12}} \cdot \Delta\theta \right) ^2 + \left( \frac{\Delta \lambda}{\lambda_{{\rm D}1}} \right) ^2} \\
+                         &=& 599.9 \sqrt{ \left( \frac{\cos (45^\circ1')}{\sin (45^\circ1')} \cdot \frac{\pi}{60\cdot180} \right) ^2 + \left( \frac{0.001}{589.592} \right) ^2} \\
+                         &=& 0.17... \cong 0.2 \,{\rm mm}^{-1}\\
+    \Delta N_{{\rm D}22} &=& N_{{\rm D}22}　\sqrt{ \left( \frac{\cos \theta_{{\rm D}22}}{\sin \theta_{{\rm D}22}} \cdot \Delta\theta \right) ^2 + \left( \frac{\Delta \lambda}{\lambda_{{\rm D}2}} \right) ^2} \\
+                         &=& 609.8 \sqrt{ \left( \frac{\cos (45^\circ55')}{\sin (45^\circ55')} \cdot \frac{\pi}{60\cdot180} \right) ^2 + \left( \frac{0.001}{588.995} \right) ^2} \\
+                         &=& 0.17... \cong 0.2 \,{\rm mm}^{-1}\\
+    \bar{N}              &=& \frac{ \frac{N_{{\rm D}11}}{(\Delta N_{{\rm D}11})^2} + \frac{N_{{\rm D}21}}{(\Delta N_{{\rm D}21})^2} + \frac{N_{{\rm D}12}}{(\Delta N_{{\rm D}12})^2} + \frac{N_{{\rm D}22}}{(\Delta N_{{\rm D}22})^2}}{ \frac{1}{(\Delta N_{{\rm D}11})^2} + \frac{1}{(\Delta N_{{\rm D}21})^2} + \frac{1}{(\Delta N_{{\rm D}12})^2} + \frac{1}{(\Delta N_{{\rm D}22})^2}} \\
+                         &=& \frac{ \frac{598.0}{(0.46)^2} + \frac{599.6}{(0.46)^2} + \frac{599.9}{(0.17)^2} + \frac{609.8}{(0.17)^2}}{ \frac{1}{(0.46)^2} + \frac{1}{(0.46)^2} + \frac{1}{(0.17)^2} + \frac{1}{(0.17)^2}} \\
+                         &=& 604.12... \cong 604.1\, {\rm mm}^{-1} \\
+    \Delta N             &=& \frac{1}{ \sqrt{ \frac{1}{(\Delta N_{{\rm D}11})^2} + \frac{1}{(\Delta N_{{\rm D}21})^2} + \frac{1}{(\Delta N_{{\rm D}12})^2} + \frac{1}{(\Delta N_{{\rm D}22})^2} } } \\
+                         &=& \frac{1}{ \sqrt{ \frac{1}{(0.46)^2} + \frac{1}{(0.46)^2} + \frac{1}{(0.17)^2} + \frac{1}{(0.17)^2} } } \\
+                         &=& 0.11... \cong 0.1\, {\rm mm}^{-1} 
+\end{eqnarray*}
+  \subsection{Hランプの測定結果}
+  Hランプによる観測できた色の1次,2次回折光は次のようになった.
+  \begin{table}[h]
+      \centering
+      \caption{Hランプの測定結果}
+      \label{Hランプの測定結果}
+      \begin{tabular}{c c c c c c} \hline
+          \raisebox{0.5zh}{色} & \raisebox{0.5zh}{次数} & \raisebox{0.5zh}{$\theta_{\rm R}$} & \raisebox{0.5zh}{$\theta_{\rm L}$} & \shortstack{$\theta$ \\ $=(\theta_{\rm L}-\theta_{\rm R})/2$} & \shortstack{$\theta_0$ \\ $=(\theta_{\rm L}+\theta_{\rm R})/2$} \\ \hline
+          青 & 1 & $257^\circ50'$ & $291^\circ57'$ & $17^\circ03'$ & $274^\circ53'$ \\
+          青 & 2 & $241^\circ$ & $306^\circ10'$ & $32^\circ35'$ & $273^\circ35'$ \\
+          水 & 1 & $257^\circ55'$ & $292^\circ45'$ & $17^\circ35'$ & $275^\circ20'$ \\
+          水 & 2 & $259^\circ19'$ & $310^\circ33'$ & $25^\circ37'$ & $284^\circ56'$ \\
+          橙 & 1 & $254^\circ07'$ & $295^\circ33'$ & $29^\circ50'$ & $275^\circ10'$ \\
+          橙 & 2 & $229^\circ58'$ & $319^\circ51'$ & $45^\circ3'$ & $274^\circ54'$ \\
+          赤 & 1 & $251^\circ40'$ & $298^\circ$ & $28^\circ20'$ & $274^\circ50'$ \\
+          赤 & 2 & $223^\circ4'$ & $326^\circ57'$ & $51^\circ56'$ & $275^\circ$ \\
+          \hline
+          \label{tab:He}
+      \end{tabular}
+  \end{table}
+  これより、(\ref{lamda})式から各光の波長$\lambda$,及びその不確かさ$\Delta \lambda$を次のように求めた.なお,それぞれの回折角と波長を(\ref{Hランプの測定結果})の上から順番に$\theta_1,\theta_2,\theta_3,\theta_4$,$\theta_5,\theta_6,\theta_7,\theta_8$と$\lambda_1,\lambda_2,\lambda_3,\lambda_4$,$\lambda_5,\lambda_6,\lambda_7,\lambda_8$とする.
+  \begin{eqnarray*}
+      \lambda_1        &=& \frac{ \sin \theta_1 }{1 \cdot N} = \frac{\sin(17^\circ03)}{1\cdot604.1} = 485.36... \cong 485.3\, {\rm nm} \\
+      \Delta \lambda_1 &=& \lambda_1 \sqrt{ \left( \frac{\cos\theta_1}{\cos\theta_1} \cdot \Delta\theta \right)^2 + \left( \frac{\Delta N}{N} \right)^2 } \\
+                        &=& 485.3 \sqrt{ \left( \frac{\cos(17^\circ03')}{\cos(17^\circ03')} \cdot \frac{\pi}{60\cdot180} \right)^2 + \left( \frac{0.1}{604.1} \right)^2 } \\
+                        &=&0.46... \cong 0.5 \,{\rm nm} \\
+      \lambda_2        &=& \frac{ \sin \theta_2 }{2 \cdot N} = \frac{\sin(32^\circ35')}{2\cdot604.1} = 445.68... \cong 445.6 \,{\rm nm} \\
+      \Delta \lambda_2 &=& \lambda_2 \sqrt{ \left( \frac{\cos\theta_2}{\cos\theta_2} \cdot \Delta\theta \right)^2 + \left( \frac{\Delta N}{N} \right)^2 } \\
+                        &=& 445.6 \sqrt{ \left( \frac{\cos(32^\circ35')}{\cos(32^\circ35')} \cdot \frac{\pi}{60\cdot180} \right)^2 + \left( \frac{0.1}{604.1} \right)^2 } \\
+                        &=&0.21... \cong 0.2 \,{\rm nm} \\
+      \lambda_3        &=& \frac{ \sin \theta_3 }{1 \cdot N} = \frac{\sin(17^\circ35')}{1\cdot604.1} = 499.97... \cong 500.0 \,{\rm nm} \\
+      \Delta \lambda_3 &=& \lambda_3 \sqrt{ \left( \frac{\cos\theta_3}{\cos\theta_3} \cdot \Delta\theta \right)^2 + \left( \frac{\Delta N}{N} \right)^2 } \\
+                        &=& 500.0 \sqrt{ \left( \frac{\cos(17^\circ35')}{\cos(17^\circ35')} \cdot \frac{\pi}{60\cdot180} \right)^2 + \left( \frac{0.1}{604.1} \right)^2 } \\
+                        &=&0.46... \cong 0.5 \,{\rm nm} \\
+      \lambda_4        &=& \frac{ \sin \theta_4 }{2 \cdot N} = \frac{\sin(25^\circ37')}{2\cdot604.1} = 357.88... \cong 357.9 \,{\rm nm} \\
+      \Delta \lambda_4 &=& \lambda_4 \sqrt{ \left( \frac{\cos\theta_4}{\cos\theta_4} \cdot \Delta\theta \right)^2 + \left( \frac{\Delta N}{N} \right)^2 } \\
+                        &=& 357.9 \sqrt{ \left( \frac{\cos(25^\circ37')}{\cos(25^\circ37')} \cdot \frac{\pi}{60\cdot180} \right)^2 + \left( \frac{0.1}{604.1} \right)^2 } \\
+                        &=&0.22... \cong 0.2 \,{\rm nm} \\
+      \lambda_5        &=& \frac{ \sin \theta_5 }{1 \cdot N} = \frac{\sin(29^\circ50')}{1\cdot604.1} = 823.42... \cong 823.4 \,{\rm nm} \\
+      \Delta \lambda_5 &=& \lambda_4 \sqrt{ \left( \frac{\cos\theta_5}{\cos\theta_5} \cdot \Delta\theta \right)^2 + \left( \frac{\Delta N}{N} \right)^2 } \\
+                       &=& 823.4 \sqrt{ \left( \frac{\cos(29^\circ50')}{\cos(29^\circ50')} \cdot \frac{\pi}{60\cdot180} \right)^2 + \left( \frac{0.1}{604.1} \right)^2 } \\
+                       &=&0.43... \cong 0.4\, {\rm nm} \\
+      \lambda_6        &=& \frac{ \sin \theta_6 }{2 \cdot N} = \frac{\sin(45^\circ3')}{2\cdot604.1} = 585.76... \cong 585.8 \,{\rm nm} \\
+      \Delta \lambda_6 &=& \lambda_4 \sqrt{ \left( \frac{\cos\theta_6}{\cos\theta_6} \cdot \Delta\theta \right)^2 + \left( \frac{\Delta N}{N} \right)^2 } \\
+                      &=& 585.8 \sqrt{ \left( \frac{\cos(45^\circ3')}{\cos(45^\circ3')} \cdot \frac{\pi}{60\cdot180} \right)^2 + \left( \frac{0.1}{604.1} \right)^2 } \\
+                      &=&0.19... \cong 0.2\, {\rm nm} \\
+      \lambda_7        &=& \frac{ \sin \theta_7 }{1 \cdot N} = \frac{\sin(28^\circ20')}{1\cdot604.1} = 785.54... \cong 785.5 \,{\rm nm} \\
+      \Delta \lambda_7 &=& \lambda_4 \sqrt{ \left( \frac{\cos\theta_7}{\cos\theta_7} \cdot \Delta\theta \right)^2 + \left( \frac{\Delta N}{N} \right)^2 } \\
+                      &=& 785.5 \sqrt{ \left( \frac{\cos(28^\circ20')}{\cos(28^\circ20')} \cdot \frac{\pi}{60\cdot180} \right)^2 + \left( \frac{0.1}{604.1} \right)^2 } \\
+                      &=&0.44... \cong 0.4 \,{\rm nm} \\
+      \lambda_8       &=& \frac{ \sin \theta_8 }{2 \cdot N} = \frac{\sin(51^\circ56')}{2\cdot604.1} = 651.59... \cong 651.6 \,{\rm nm} \\
+      \Delta \lambda_8 &=& \lambda_4 \sqrt{ \left( \frac{\cos\theta_8}{\cos\theta_8} \cdot \Delta\theta \right)^2 + \left( \frac{\Delta N}{N} \right)^2 } \\
+                      &=& 651.6 \sqrt{ \left( \frac{\cos(51^\circ56')}{\cos(51^\circ56')} \cdot \frac{\pi}{60\cdot180} \right)^2 + \left( \frac{0.1}{604.1} \right)^2 } \\
+                      &=&0.18... \cong 0.2\, {\rm nm} \\
+  \end{eqnarray*}
+  理科年表\cite{b}を見たところHの青色の波長は410.1734 nm,水色と思われる波長は486.1286949 nm,赤色と思われる波長は656.285175 nmとなっている.
+
+  
+  この値を参考にして表から青の二次回折光445.6$\pm$0.2 nm,水色の一次回折光500.0$\pm$0.5 nm,赤色のの二次回折光651.6$\pm$0.2 nmの値に対して (\ref{nuu})の式でnの値がどうなるか調べる.
+  青色の二次回折光の${\lambda}$を${4.458×10^-7}$ mとし代入し結果は${n=\sqrt{21.968...}}$となりおおよそ4と5の間となった.
+  水色の二次回折光の${\lambda}$を${4.458×10^-7}$ mとし代入し結果は${n=\sqrt{14.814...}}$となりおおよそ3と4の間となった.
+  赤色の二次回折光の${\lambda}$を${6.518×10^-7}$ mとし代入し結果は${n=\sqrt{9.078...}}$となりおおよそ3となった.
+
+  
+
+  \section{考察}
+  まずNaランプを用いた実験で求めた格子定数$N$について考察する.今回利用した回析格子は$N$=600と定義されているものであり,実際に計測した結果は604.1$\pm$0.1となり,定義より少し本数が多いという結果になった.
+
+  加えてHランプを用いた実験で求めた観測できた色の波長は青が一次回折光が誤差が$+$74.62 nm,二次回折光が誤差が$+$35.23 nm,水色が一次回折光が誤差が$+$13.37 nm,二次回折光が誤差が$-$128.03 nm,赤色が一次回折光が誤差が$+$128.31 nm,二次回折光が誤差が$-$4.49 nmとなった.
+  結果として最も文献値と離れたものは赤色の一次回折光であった.
+  これらのずれの原因として多くのことが考えられるが,Naランプがそこまで大きくはずれた値を出していないのに対し,Hランプの結果が大きくハズレたものがあることから,ランプをNaからHに変えたときに,視差による誤差が出ないようにする調整が甘かったと考えれる.
+  またランプ交換時にHランプでは$\theta_0$となる場所に設置するのにかなり手こずり,$\theta_0$の値がずれていたと考えられる.
+
+  \begin{thebibliography}{9}
+    \bibitem{a} 電気通信大学『基礎科学実験A』2021年,p52$\sim$58
+    \bibitem{b} 国立天文台『理科年表』2022年　　\url{https://www.rikanenpyo.jp/member/?module=Member&action=Contents&page=allPSx11x1010_2022_1.html}
+  \end{thebibliography}
+\end{document}
